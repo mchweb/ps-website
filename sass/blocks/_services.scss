@@ -1,0 +1,61 @@
+.services{
+	max-width:rhythm(138);
+	margin:rhythm(4) auto;
+}
+
+.services__item{
+	display:inline-block;
+	position:relative;
+	width:33.33333333%;
+	max-width:rhythm(46);
+	padding-left:rhythm(2);
+	padding-right:rhythm(2);
+	margin-bottom:rhythm(3);
+	@media (max-width: 56em) {
+		width:100%;
+	}
+	&:after{
+		border-color:$bg-clr;
+		content: "";
+    	position: absolute;
+    	left:0;
+    	margin-left: rhythm(38);
+    	margin-top: rhythm(-8);
+    	border-width: rhythm(4) 0px rhythm(4) rhythm(6);
+    	border-style: solid;
+    	border-right-color: transparent;
+    	border-left-color: transparent;
+	}
+	animation-duration: 1s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode: both;
+	animation-name:fadeInLeft;
+	animation-delay:0.5s;
+	&:nth-child(2){
+		animation-delay:0.75s;
+	}
+	&:nth-child(3){
+		animation-delay:1s;
+	}
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.services__info{
+	@include adjust-font-size-to(18px);
+	padding:rhythm(2, 18px) rhythm(4, 18px) rhythm(2, 18px) rhythm(2, 18px);
+	background-color:$accent;
+	color:$bg-clr;
+	width:100%;
+	display:block;
+	
+}

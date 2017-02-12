@@ -1,0 +1,59 @@
+/***************************************************
+COMMON STYLES
+***************************************************/
+html, body {
+	height:100%;
+	min-height:100%;
+}
+body{
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	cursor:pointer;
+	color:$text-clr;
+}
+button{
+	background:none;
+    border:none;
+    margin:0;
+}
+button:focus, input, textarea {outline:0;}
+textarea {resize:none;overflow: hidden;}
+
+strong {font-weight:bold !important}
+
+
+/***************************************************
+MAIN TYPOGRAPHY
+***************************************************/
+@import "compass/typography/vertical_rhythm";
+$base-font-size: 16px;
+$base-line-height: 6px;
+
+@include establish-baseline;
+
+// settings
+body{
+	font-family: Helvetica, Arial, sans-serif;
+	color:$text-clr;
+}
+p{
+	@include adjust-font-size-to($fs-base, 4);
+}
+/***************************************************
+SUSY GRID
+***************************************************/
+@import "susy";
+
+@include border-box-sizing;
+
+a, button {
+	transition-property: border-bottom,border-color,background,color,fill;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    &:hover{
+    	transition:none;
+    }
+}

@@ -1,0 +1,82 @@
+// Buttons
+.btn{
+	display:inline-block;
+	vertical-align:middle;
+	//background:$bg-clr;
+	border:rhythm(1/6) solid $accent;
+	border-radius:rhythm(5);
+	padding:rhythm(2.5 - 1/6) rhythm(4);
+	border-color:$accent;
+	color:$gray-25;
+	text-align:center;
+	&:hover, &.btn_disabled{
+		background:$accent-dark;
+		border-color:$accent-dark;
+		color:$bg-clr;
+	}
+	& p{
+		@extend .p-buttons;
+	}
+	&.btn_nohover{
+		&:hover{
+			background:$bg-clr;
+			border-color:$accent;
+			color:$gray-25;
+		}
+	}
+}
+
+.btn_primary{
+	background:$accent;
+	color:$bg-clr;
+	&:hover, &.btn_disabled{
+		background:$accent-dark;
+		border-color:$accent-dark;
+	}
+	&.btn_nohover{
+		&:hover{
+			background:$accent;
+			color:$bg-clr;
+		}
+	}
+}
+.btn_light{
+	background:none;
+	color:$gray-70;
+	border-color:$gray-70;
+	&:hover, &.btn_disabled{
+		color:$text-clr;
+		background:$gray-70;
+		border-color:$gray-70;
+	}
+	&.btn_nohover{
+		&:hover{
+			background:none;
+			color:$gray-70;
+			border-color:$gray-70;
+		}
+	}
+}
+.btn_long{
+	max-width:rhythm(27);
+	padding:rhythm(1 - 1/6) rhythm(4);
+}
+
+
+@keyframes spinner {
+    0% {
+        opacity: 0.2
+    }
+
+    30% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0.2
+    }
+}
+.btn_loading {
+	& p {height:0;visibility:hidden;}
+	& .btn__spinner {display:block;}
+}

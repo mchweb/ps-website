@@ -1,0 +1,15 @@
+.l-wrapper{
+	padding-top:rhythm(4);
+	width:100vw;
+	height:100vh;
+	background-color:$bg-clr;
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.l-content{
+	max-width:$cnt;
+	margin:0 auto;
+	text-align:center;
+	padding:rhythm(3);
+}
