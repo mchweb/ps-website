@@ -1,28 +1,19 @@
 {
-  "name": "ps-website",
-  "version": "0.1.0",
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-compass": "^1.0.4",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-imagemin": "^1.0.0",
-    "grunt-contrib-uglify": "^0.11.0",
-    "grunt-inline-imgsize": "0.0.1",
-    "grunt-processhtml": "^0.3.9",
-    "grunt-sass": "^1.1.0",
-    "autoprefixer":"^6.3.7",
-    "css-mqpacker":"^5.0.1",
-    "cssnano":"^3.7.3",
-    "grunt-postcss":"^0.8.0",
-    "postcss-focus":"^1.0.0",
-    "postcss-px-to-em":"^1.0.1",
-    "grunt-uncss": "^0.4.4"
-  },
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "INIT",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rigger": "^0.5.8",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "imagemin-pngquant": "^5.0.0"
+  }
 }
