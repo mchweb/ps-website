@@ -3771,6 +3771,28 @@ a:hover, button:hover {
   display: block;
 }
 
+/* Services ------*/
+.l-list-socicons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.c-list-socicons {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.c-list-socicons__link .fa {
+  color: #ffffff;
+  font-size: 50px;
+}
+
+.c-list-socicons__item {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 img {
   max-width: 100%;
 }
