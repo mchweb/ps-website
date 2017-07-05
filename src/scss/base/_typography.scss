@@ -2,57 +2,43 @@
 // Typography style ------ //
 // ----------------------- //
 
+html, body {
+	height:100%;
+	min-height:100%;
+}
+body{
+	overflow-x: hidden;
+}
 
-body {
-    font-size: $font_size_base;
-    line-height: $line_height_base;
-    color: $color_black;
-    font-family: $font_family_base;  
-}
-input, label, select, button, textarea {
-    font-family: $font_family_base;  
-}
-h1, h2, h3, h4 {
-    font-family: $font_family_base;
-    color: $color_black;
-}
-h1 {
-    font-size: $font_size_h1;
-    line-height: $line_height_h1;    
-    font-weight: bold;
-}
-h2 {
-    font-size: $font_size_h2;
-    line-height: $line_height_h2;
-}
-h3 {
-    font-size: $font_size_h3;
-    line-height: $line_height_h3;
-}
-h4 {
-    font-size: $font_size_h4;
-    line-height: $line_height_h4;
-}
-p {
-    font-family: $font_family_base;  
-}
-strong {
-    font-family: $font_family_base;
-}
 a {
-    text-decoration: none;
-    border-bottom: 1px solid;
-    border-bottom-color: rgba($color_black, 0.5);  
-    &:hover {
-        border-bottom-color: rgba($color_black, 0.5);  
+	text-decoration: none;
+	cursor:pointer;
+	color:$text-clr;
+}
+button{
+	background:none;
+    border:none;
+    margin:0;
+}
+button:focus, input, textarea {outline:0;}
+textarea {resize:none;overflow: hidden;}
+
+strong {font-weight:bold !important}
+
+
+
+body{
+	font-family: Helvetica, Arial, sans-serif;
+	color:$text-clr;
+}
+p{
+	@include adjust-font-size-to($fs-base, 4);
+}
+a, button {
+	transition-property: border-bottom,border-color,background,color,fill;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    &:hover{
+    	transition:none;
     }
-    &:active {
-        border-bottom-color: rgba($color_black, 0.5);  
-    }
-    &:visited {
-        border-bottom-color: rgba($color_black, 0.5);  
-    }
-    &:focus {
-        border-bottom-color: rgba($color_black, 0.5); 
-    }    
 }

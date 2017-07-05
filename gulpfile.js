@@ -12,13 +12,16 @@ var path = {
     build: {
         html: 'build/',
         js: 'build/assets/js/',
+        favicon: 'build/',
         css: 'build/assets/css/',
         img: 'build/assets/img/',
         imgTemp: 'build/assets/content/img/',
-        fonts: 'build/assets/fonts/'
+        fonts: 'build/assets/fonts/',
+        php: 'build/'
     },
     src: { 
         html: 'src/*.html', 
+        favicon: 'src/favicon.*',        
         js: 'src/js/main.js',
         style: 'src/scss/styles.scss',
         styleDirectory: 'src/scss',
@@ -27,16 +30,19 @@ var path = {
         imgTemp: 'src/temp/images/**/*.*',
         imgDirectory: 'src/images',
         fonts: 'src/fonts/**/*.*',
-        fontAwesome: 'vendor/font-awesome/fonts/**/*.*'
+        fontAwesome: 'vendor/font-awesome/fonts/**/*.*',
+        php: 'src/*.php'
     },
     watch: { 
         html: 'src/**/*.html',
+        favicon: 'src/favicon*',        
         js: 'src/js/**/*.js',
         style: 'src/**/*.scss',
         img: 'src/img/**/*.*',
         imgTemp: 'src/temp/images/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        fontAwesome: 'vendor/font-awesome/fonts/**/*.*'
+        fontAwesome: 'vendor/font-awesome/fonts/**/*.*',
+        php: 'src/*.php'
     },
     clean: './build'
 };
@@ -44,6 +50,10 @@ gulp.task('html:build', function () {
     gulp.src(path.src.html)
         .pipe(rigger())
         .pipe(gulp.dest(path.build.html)); 
+});
+gulp.task('favicon:build', function() {
+    gulp.src(path.src.favicon)
+        .pipe(gulp.dest(path.build.favicon)); 
 });
 gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
@@ -87,17 +97,26 @@ gulp.task('image:build', function () {
         }))
         .pipe(gulp.dest(path.build.imgTemp));     
 });
+gulp.task('php:build', function() {
+    gulp.src(path.src.php)
+        .pipe(gulp.dest(path.build.php)); 
+});
 gulp.task('build', [
     'html:build',
+    'favicon:build',    
     'fonts:build',    
     'style:build',    
     'js:build',
-    'image:build'
+    'image:build',
+    'php:build'
 ]);
 gulp.task('watch', function(){
     watch([path.watch.html], function(event, cb) {
         gulp.start('html:build');
     });
+    watch([path.watch.favicon], function(event, cb) {
+        gulp.start('favicon:build');
+    });     
     watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
     });    
@@ -113,5 +132,8 @@ gulp.task('watch', function(){
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
+    watch([path.watch.php], function(event, cb) {
+        gulp.start('php:build');
+    });    
 });
 gulp.task('default', ['build', 'watch']);

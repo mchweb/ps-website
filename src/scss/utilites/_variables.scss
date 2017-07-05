@@ -11,7 +11,26 @@ $url_fonts: "../fonts";
 /* Colors ---------*/
 $color_white: #ffffff;
 $color_black: #000000;
-
+$fs-base: 16px;
+$cnt: 1200px;
+$text-clr:#e3e3e3;
+$bg-clr:#131313;
+$blue:blue;
+$purple:purple;
+$accent:#fff200;
+$green: #008744;
+$blue: #0057e7;
+$red: #d62d20;
+$yellow: #ffa700;
+$white: #eee;
+@import "compass/typography/vertical_rhythm";
+$base-font-size: 16px;
+$base-line-height: 6px;
+@include establish-baseline;
+$width: rhythm(6);
+.clr-white {color:white !important}
+.clr-black {color:black !important}
+.align-center{text-align:center}
 /* Fonts ----------*/
 $font_family_base: Arial, Helvetica, sans-serif;
 /*font awesome settings*/

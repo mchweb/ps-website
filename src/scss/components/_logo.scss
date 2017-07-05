@@ -1,3 +1,38 @@
 // ----------------------- //
 // Logo style ------------ //
 // ----------------------- //
+
+.logo {
+	animation-duration: 0.5s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode: both;
+	animation-name:fadeIn;
+	animation-delay:0.5s;
+}
+
+.logo__caption{
+	p{
+		@include adjust-font-size-to(22px);
+	}
+	margin-bottom:rhythm(2);
+}
+
+.logo__image {
+	width:75%;
+	min-width:rhythm(40);
+	max-width:rhythm(100);
+	margin:0 auto;
+	@media (max-width: 56em) {
+		height:auto;
+	}
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

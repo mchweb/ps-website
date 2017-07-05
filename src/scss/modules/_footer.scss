@@ -1,3 +1,38 @@
 // ----------------------- //
 // Footer style ---------- //
 // ----------------------- //
+
+.footer{
+	animation-duration: 0.5s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode: both;
+	animation-name:fadeIn;
+	animation-delay:0.5s;	
+}
+
+.footer__btn{
+	.btn{
+		padding:0;
+		margin:0 rhythm(2, 32px);
+		@include adjust-font-size-to(32px);
+		border-bottom:2px solid rgba(255,255,255,0.55);
+        color: $color_white;
+		&:hover{
+			color:$accent;
+			border-color:rgba(255,242,0,0.55);
+            cursor: pointer;
+		}
+		margin-bottom:rhythm(1);
+		@media (max-width:25em){
+			@include adjust-font-size-to(24px);
+		}
+	}
+	margin-bottom:rhythm(4);
+}
+
+.footer__link a{
+	border-bottom:1px solid transparent;
+	&:hover{
+		border-color: rgba(255,255,255,0.35);
+	}
+}
