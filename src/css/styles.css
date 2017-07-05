@@ -3679,6 +3679,10 @@ a:hover, button:hover {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
+.footer__link.footer__link_size_sm a {
+  font-size: 12px;
+}
+
 /* Page ********************/
 /* Button Up ------*/
 #scrollup {
