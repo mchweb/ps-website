@@ -52,6 +52,8 @@
     	border-style: solid;
     	border-right-color: transparent;
     	border-left-color: transparent;
+        border-left-width: 2.312em;
+        border-bottom-width: 1.6em;        
 	}
 	animation-duration: 1s;
 	animation-timing-function:ease-in-out;
@@ -104,3 +106,8 @@
     display: inline-block;
     margin-left: 5px;
 }
+@include for-size(device-small-max) {
+    .l-list-socicons {
+        display: none;
+    }
+}  

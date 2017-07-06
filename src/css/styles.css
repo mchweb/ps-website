@@ -3743,6 +3743,8 @@ a:hover, button:hover {
   border-style: solid;
   border-right-color: transparent;
   border-left-color: transparent;
+  border-left-width: 2.312em;
+  border-bottom-width: 1.6em;
 }
 .services__item:nth-child(2) {
   animation-delay: 0.75s;
@@ -3793,6 +3795,11 @@ a:hover, button:hover {
   margin-left: 5px;
 }
 
+@media (max-width: 479px) {
+  .l-list-socicons {
+    display: none;
+  }
+}
 img {
   max-width: 100%;
 }
