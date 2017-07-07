@@ -43,7 +43,16 @@
   };
 
   function isInputValid(i){
-    return i.value.toString().length == 16;
+    var valuePhoneClear = String(i.value);
+      console.log(i.value);
+    valuePhoneClear = valuePhoneClear.replace(/\+/g,'').replace(/\_/g,'').replace(/\)/g,'').replace(/\(/g,'').replace(/\-/g,'').replace(/ /g,'');  
+      console.log(valuePhoneClear.length);
+    if(valuePhoneClear.length == 11){
+        return true;
+    }else {
+        return false;
+    }         
+    /*return i.value.toString().length == 16;*/
   }
   function isInputEmpty(i){
     return i.value.toString().length <= 3;
