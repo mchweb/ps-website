@@ -44,9 +44,7 @@
 
   function isInputValid(i){
     var valuePhoneClear = String(i.value);
-      console.log(i.value);
     valuePhoneClear = valuePhoneClear.replace(/\+/g,'').replace(/\_/g,'').replace(/\)/g,'').replace(/\(/g,'').replace(/\-/g,'').replace(/ /g,'');  
-      console.log(valuePhoneClear.length);
     if(valuePhoneClear.length == 11){
         return true;
     }else {
