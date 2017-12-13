@@ -44,12 +44,12 @@
 
   function isInputValid(i){
     var valuePhoneClear = String(i.value);
-    valuePhoneClear = valuePhoneClear.replace(/\+/g,'').replace(/\_/g,'').replace(/\)/g,'').replace(/\(/g,'').replace(/\-/g,'').replace(/ /g,'');  
+    valuePhoneClear = valuePhoneClear.replace(/\+/g,'').replace(/\_/g,'').replace(/\)/g,'').replace(/\(/g,'').replace(/\-/g,'').replace(/ /g,'');
     if(valuePhoneClear.length == 11){
         return true;
     }else {
         return false;
-    }         
+    }
     /*return i.value.toString().length == 16;*/
   }
   function isInputEmpty(i){
@@ -90,7 +90,7 @@
     }
   }
 
-  var content = document.querySelector('.js-content'), 
+  var content = document.querySelector('.js-content'),
     popup = document.querySelector('.js-popup');
   function openForm(){
     fadeOut(content);
@@ -137,7 +137,7 @@ function autoGrowTextArea(element) {
     element.style.height = "96px";
     element.style.height = (element.scrollHeight)+"px";
 }
-$(document).ready(function(){    
+$(document).ready(function(){
     /* Scroll to up */
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > 100) {
@@ -149,6 +149,15 @@ $(document).ready(function(){
 	$('#scrollup').click(function(){
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		return false;
-	});   
-    
-});     
+	});
+    var tempURLHref = document.location.href;
+    console.log(tempURLHref);
+    if(tempURLHref.indexOf('#contact') >= 1){
+        openForm();
+        console.log(1);
+    }else {
+        closeForm();
+        console.log(2);
+    }
+
+});
